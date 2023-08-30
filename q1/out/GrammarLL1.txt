@@ -1,0 +1,6 @@
+Non Terminals: S, B, A
+Terminals: n, +, x
+Rules:
+A -> + | x
+B -> # | nBAB
+S -> nB
