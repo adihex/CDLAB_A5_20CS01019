@@ -7,7 +7,6 @@
     
     int lines = 0;
     string yyval;
-      
     
 %}
 
@@ -27,17 +26,16 @@ str                 ["]({letter}+)["]
 
 
 %%
-{ws}                {yyval=""; printf("Whitespace\n"); return 1;}
-{separator}         {yyval = yytext; printf("Separator\n"); return 1;}
-{relop}             {yyval = yytext; printf("Relop\n"); return 1;}
-{operator}          {yyval = yytext; printf("operators\n"); return 1;}
-{assignment}        {yyval = yytext; printf("Assignment\n"); return 1;}
-"and"|"else"|"end"|"if"|"int"|"do"|"float"|"not"|"or"|"print"|"prog"|"scan"|"then"|"while" 
-					{yyval = yytext; printf("Keyword: %s\n", yytext); return 1;}
-{ic}            	{yyval = "ic"; printf("IC: %s\n", yytext); return 1;}
-{fc}            	{yyval = "fc"; printf("FC: %s\n", yytext); return 1;}
-{id}            	{yyval = "id"; printf("ID: %s\n", yytext); return 1;}
-{str}           	{yyval = "str"; printf("STR: %s\n", yytext); return 1;}
+{ws}                {yyval="";  return 1;}
+{separator}         {yyval = yytext; return 1;}
+{relop}             {yyval = yytext;  return 1;}
+{operator}          {yyval = yytext;  return 1;}
+{assignment}        {yyval = yytext;  return 1;}
+"and"|"else"|"end"|"if"|"int"|"do"|"float"|"not"|"or"|"print"|"prog"|"scan"|"then"|"while" 					{yyval = yytext;  return 1;}
+{ic}            	{yyval = "ic";  return 1;}
+{fc}            	{yyval = "fc";  return 1;}
+{id}            	{yyval = "id";  return 1;}
+{str}           	{yyval = "str"; return 1;}
 \n                  {yyval= "", lines++;}
 .                   {printf("ERROR: unknown token in input file: %s\n", yytext); return -1;}
 %%
@@ -63,6 +61,6 @@ int get_string(char *filename, string &res, map<string,string> terminal_map) {
 		yyval = "";
 	}
 	res += '$';
-	printf("Lines Scanned %d\n", lines);
+	// printf("Lines Scanned %d\n", lines);
 	return 0;
 }

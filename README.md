@@ -9,12 +9,19 @@
 
 ### Steps to execute :
 
-```
-qn1: g++ qn1.cpp -o qn1
+```bash
+qn1:
+cd Question1
+g++ qn1.cpp -o qn1
 ./qn1
 
-qn2: g++ qn2.cpp -o qn2
+```
+```bash
+qn2: 
+cd Question2
+g++ qn2.cpp -o qn2
 ./qn2
+
 ```
 
 ## Input format:
@@ -24,5 +31,6 @@ qn2: g++ qn2.cpp -o qn2
     + No. of terminals followed by each terminal in a new line.
     + No. of production rules followed by each rule in a new line of format A->B|Cae|ϵ
 
-- For grammars with terminals/non-terminals with more than one character, call the transform_to_single_char_grammar function first.
+
+***For grammars with terminals/non-terminals with more than one character, call the transform_to_single_char_grammar function first.***
 

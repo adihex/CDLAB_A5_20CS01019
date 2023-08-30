@@ -1,6 +1,6 @@
-#include "../header/grammar.h"
-#include "../header/sets.h"
-#include "../header/top_down_parser.h"
+#include "../lib/grammar.h"
+#include "../lib/sets.h"
+#include "../lib/top_down_parser.h"
 #include "./lex/lex.h"
 #include <bits/stdc++.h>
 

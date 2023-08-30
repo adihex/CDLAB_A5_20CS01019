@@ -76,16 +76,16 @@ public:
 
   void output_grammar() {
 
-    cout << "Non Terminals: ";
-    for (auto i = 0; i < non_terminals.size() - 1; i++) {
-      cout << non_terminals[i] << ", ";
-    }
-    cout << non_terminals[non_terminals.size() - 1] << endl;
-    cout << "Terminals: ";
-    for (auto i = 0; i < terminals.size() - 1; i++) {
-      cout << terminals[i] << ", ";
-    }
-    cout << terminals[terminals.size() - 1] << endl;
+    // cout << "Non Terminals: ";
+    // for (auto i = 0; i < non_terminals.size() - 1; i++) {
+    // cout << non_terminals[i] << ", ";
+    // }
+    // cout << non_terminals[non_terminals.size() - 1] << endl;
+    // cout << "Terminals: ";
+    // for (auto i = 0; i < terminals.size() - 1; i++) {
+    // cout << terminals[i] << ", ";
+    // }
+    // cout << terminals[terminals.size() - 1] << endl;
     cout << "Rules:" << endl;
     for (auto i = rules.begin(); i != rules.end(); i++) {
       cout << i->first << " -> ";
